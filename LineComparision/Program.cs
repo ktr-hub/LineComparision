@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.CompilerServices;
+using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace LineComparision
 {
@@ -6,7 +8,25 @@ namespace LineComparision
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Line Comparision Computation Program on Master Branch!");
+            string []input = new string[4];
+            int[] x = new int[2];
+            int[] y = new int[2];
+            Console.WriteLine("Enter x1,y1,x2 and y2");
+            for(int i = 0; i < 4; i++)
+            {
+                input[i] = Console.ReadLine();
+                if (i % 2 == 0)
+                {
+                    x[i / 2] = Convert.ToInt32(input[i]);
+                }
+                else
+                {
+                    y[i / 2] = Convert.ToInt32(input[i]);
+                }
+            }
+            Console.WriteLine("Length of the line is : ");
+            int length = (int)Math.Sqrt((x[1] - x[0]) * (x[1] - x[0]) + (y[1] - y[0]) * (y[1] - y[0]));
+            Console.WriteLine(length);
         }
     }
 }
