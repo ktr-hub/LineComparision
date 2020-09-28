@@ -48,13 +48,17 @@ namespace LineComparision
             int length2 = (int)Math.Sqrt((xx[1] - xx[0]) * (xx[1] - xx[0]) + (yy[1] - yy[0]) * (yy[1] - yy[0]));
             Console.WriteLine(length2);
 
-            if (length.Equals(length2))
+            if (length.CompareTo(length2)==0)
             {
                 Console.WriteLine("Both lines are equal");
             }
+            else if(length.CompareTo(length2)>0)
+            {
+                Console.WriteLine("Line 1 is greater than Line 2");
+            }
             else
             {
-                Console.WriteLine("Both lines are not equal");
+                Console.WriteLine("Line 2 is greater than Line 1");
             }
 
         }
